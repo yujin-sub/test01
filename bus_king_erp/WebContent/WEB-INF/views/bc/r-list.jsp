@@ -10,6 +10,7 @@
 </head>
 <body>
 	<%@include file="/common/header.jsp" %>
+	
 	<main>
 	<form action="" method="post">
 		<table border="1">
@@ -22,7 +23,7 @@
 				<th>배차 간격</th>
 				
 				<td><input type="button" value="추가하기"
-					onclick="location.href='insert.do'"></td>
+					onclick="location.href='r-insertform.do'"></td>
 			</tr>
 			<c:forEach items="${routelist}" var="list">
 				<tr>
@@ -35,9 +36,9 @@
 					<td>${list.r_interval}</td>
 
 					<td><input type="button" value="수정"
-						onclick="location.href='update.do?r_no=${list.r_no}'"></td>
+						onclick="location.href='r-updateform.do?r_no=${list.r_no}'"></td>
 					<td><input type="button" value="삭제"
-						onclick="location.href='delete.do?r_no=${list.r_no}'">
+						onclick="location.href='r-delete.do?r_no=${list.r_no}'">
 				</tr>
 
 			</c:forEach>

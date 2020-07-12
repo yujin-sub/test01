@@ -10,20 +10,20 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.servlet.ModelAndView;
 
 import kr.kosta.bus.model.RouteDTO;
 import kr.kosta.bus.service.RouteService;
 
 @Controller
-@RequestMapping("/rc/*")
-public class RouteController {
+@RequestMapping("/bc/*")
+public class BaechaController {
+	
 	
 	@Autowired
 	RouteService service;
 	
-	
-	@RequestMapping("home.do")
+	// 노선관리 파트
+	@RequestMapping("r-list.do")
 	public String home(HttpServletRequest request, Model model) {
 		int pg = 1;
 		String strPg = request.getParameter("pg");
@@ -64,14 +64,14 @@ public class RouteController {
 		model.addAttribute("fromPage", fromPage);
 		model.addAttribute("toPage", toPage);
 		
-		return "/bc/home";
+		return "/bc/r-list";
 	}
 	
-	@RequestMapping(value = "/insert.do", method = RequestMethod.GET)
+	@RequestMapping(value = "r-insertform.do", method = RequestMethod.GET)
 	public String insertform() {
-		return "insert";
+		return "/bc/r-insertform";
 	}
-	@RequestMapping(value = "/insert.do", method = RequestMethod.POST)
+	@RequestMapping(value = "r-insert.do", method = RequestMethod.POST)
 	public  String insert(HttpServletRequest request, RouteDTO dto) {
 		  dto.setR_no(request.getParameter("r_no"));
 		  dto.setR_start(request.getParameter("r_start"));
@@ -88,26 +88,25 @@ public class RouteController {
 		  dto.setR_pay_kid(Integer.parseInt(request.getParameter("r_pay_kid")));
 		  dto.setR_pay_kid2(Integer.parseInt(request.getParameter("r_pay_kid2")));
 		service.routeInsert(dto);
-		return "redirect:home.do";
+		return "redirect:r-list.do";
 	}
 	
-	@RequestMapping(value="/update.do", method=RequestMethod.GET)
+	@RequestMapping(value="r-updateform.do", method=RequestMethod.GET)
 	public String routeupdateform(RouteDTO dto,Model model) {
 		model.addAttribute("dto",dto);
-		return "updateform";
+		return "/bc/r-updateform";
 	}
 
-	@RequestMapping(value="/update.do", method=RequestMethod.POST)
+	@RequestMapping(value="r-update.do", method=RequestMethod.POST)
 	public String routeupdate(RouteDTO dto,Model model) {
 		service.routeUpdate(dto);
-		return "redirect:home.do";
+		return "redirect:r-list.do";
 	}
 	
-    @RequestMapping("/delete.do")
+    @RequestMapping("r-delete.do")
     public String delete(String r_no) {
       service.routeDelete(r_no);
-      return "redirect:home.do";
+      return "redirect:r-list.do";
     }
-	 
-	
+
 }

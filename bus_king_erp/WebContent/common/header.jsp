@@ -19,52 +19,52 @@
     <!-- HEADER -->
     <div class="wrap">
         <header>
-             <h1><a href="#">BUS FOR US</a></h1>
+             <h1><a href="">BUS FOR US</a></h1>
              <nav class="gnb">
-                 <a href="#" class="on">배차</a>
-                 <a href="#">인사</a>
-                 <a href="#">회계</a>
-                 <a href="#">정비</a>
-                 <a href="#">사고∙범칙금</a>
+                 <a href="" class="on">배차</a>
+                 <a href="">인사</a>
+                 <a href="">회계</a>
+                 <a href="">정비</a>
+                 <a href="">사고∙범칙금</a>
              </nav>
         </header>
              
             <div class="lnb bus on">
                 <div class="lnb-con">
-                    <a href="#" class="on">차량관리</a>
-                    <a href="#">노선관리</a>
-                    <a href="#">배차정보</a>
-                    <a href="#">운행정보</a>
+                    <a href="" class="on">차량관리</a>
+                    <a href="">노선관리</a>	<!-- /bus_king_erp/bc/r-list.do -->
+                    <a href="">배차정보</a>
+                    <a href="">운행정보</a>
                 </div>
             </div>
             
             <div class="lnb labor">
                 <div class="lnb-con">
-                    <a href="#">인사관리</a>
-                    <a href="#">근태관리</a>
-                    <a href="#">급여정보</a>
-                    <a href="#">정산관리</a>
+                    <a href="">인사관리</a>
+                    <a href="">근태관리</a>
+                    <a href="">급여정보</a>
+                    <a href="">정산관리</a>
                 </div>
             </div>
             
             <div class="lnb acct">
                <div class="lnb-con">
-                    <a href="#">매입매출</a>
+                    <a href="">매입매출</a>
                 </div>
             </div>
             
             <div class="lnb repair">
                 <div class="lnb-con">
-                    <a href="#">정비관리</a>
-                    <a href="#">연료관리</a>
+                    <a href="">정비관리</a>
+                    <a href="">연료관리</a>
                 </div>
             </div>
             
             <div class="lnb fine">
                 <div class="lnb-con">
-                    <a href="#">교통사고관리</a>
-                    <a href="#">범칙금관리</a>
-                    <a href="#">민원관리</a>
+                    <a href="">교통사고관리</a>
+                    <a href="">범칙금관리</a>
+                    <a href="">민원관리</a>
                 </div>
             </div>
     </div>
